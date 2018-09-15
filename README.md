@@ -45,4 +45,4 @@ Systemet er hovedsakelig bygget ved hjelp av følgende:
 ## Gruppa består av:
 * [Minh Ha Do](https://gitlab.stud.iie.ntnu.no/minhhd)    
 * [Kim Duong](https://github.com/kimduo)    
-* [Catriona Thora Tørklep](https://gitlab.stud.iie.ntnu.no/catriont)    
+* [Catriona Thora Tørklep](https://github.com/CatrionaTorklep)    
