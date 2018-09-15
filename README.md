@@ -43,6 +43,6 @@ Systemet er hovedsakelig bygget ved hjelp av følgende:
 3. npm run
     
 ## Gruppa består av:
-* [Minh Ha Do](https://gitlab.stud.iie.ntnu.no/minhhd)    
+* [Minh Ha Do](https://github.com/mhado)    
 * [Kim Duong](https://github.com/kimduo)    
 * [Catriona Thora Tørklep](https://github.com/CatrionaTorklep)    
