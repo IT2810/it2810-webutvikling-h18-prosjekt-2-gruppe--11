@@ -15,9 +15,9 @@ Utifra følgende kategori genereres det fire kombinasjoner av valgt underkategor
     * Stripete katter
     * Flekkete katter
 * Lyd
-    * Feminin stemme
-    * Maskulin stemme
-    * Barnestemme
+    * Små katter
+    * Store katter
+    * Tilfeldig
 * Tekst
     * Sang
     * Dikt
