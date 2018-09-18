@@ -2,7 +2,19 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 //import { CallAJAXTextMedia } from "./components/CallAJAXTextMedia";
-import { GenerateRadioBtn } from "./components/GenerateRadioBtn";
+import { RadioButtons } from "./components/RadioButtons";
+
+const cats = [
+    { text: "Spotted", val: "spotted" },
+    { text: "Striped", val: "striped" },
+    { text: "Plain", val: "plain" }
+];
+
+const texts = [
+    { text: "Poems", val: "poems" },
+    { text: "Songs", val: "songs" },
+    { text: "Quotes", val: "quotes" }
+];
 
 class App extends Component {
 
@@ -22,8 +34,11 @@ class App extends Component {
                         {/*<CallAJAXTextMedia/>*/}
                     </div>
 
-                    {/*RADIOBUTTON TEST*/}
-                    <GenerateRadioBtn />
+                    {/*RADIOBUTTONS*/}
+                    <div>
+                            <RadioButtons typesTitle="Cat Types:" lists={cats} typesName="catTypes" />
+                            <RadioButtons typesTitle="Text Types:" lists={texts} typesName="textTypes" />
+                    </div>
                 </div>
             );
         }
