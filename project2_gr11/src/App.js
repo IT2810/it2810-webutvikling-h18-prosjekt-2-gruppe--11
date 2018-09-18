@@ -16,6 +16,13 @@ const texts = [
     { text: "Quotes", val: "quotes" }
 ];
 
+
+const sounds = [
+    { text: "Feminine Voice", val: "fVoice" },
+    { text: "Masculine Voice", val: "mVoice" },
+    { text: "Childrens Voice", val: "cVoice" }
+];
+
 class App extends Component {
 
         render()
@@ -38,6 +45,7 @@ class App extends Component {
                     <div>
                             <RadioButtons typesTitle="Cat Types:" lists={cats} typesName="catTypes" />
                             <RadioButtons typesTitle="Text Types:" lists={texts} typesName="textTypes" />
+                        <RadioButtons typesTitle="Sound Types:" lists={sounds} typesName="soundTypes" />
                     </div>
                 </div>
             );
