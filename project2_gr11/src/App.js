@@ -4,24 +4,6 @@ import './App.css';
 import { CallAJAXTextMedia } from "./components/CallAJAXTextMedia";
 import { MediaTypeMenu } from "./components/MediaTypeMenu";
 
-const cats = [
-    { text: "Spotted", val: "spotted" },
-    { text: "Striped", val: "striped" },
-    { text: "Plain", val: "plain" }
-];
-
-const texts = [
-    { text: "Poems", val: "poems" },
-    { text: "Songs", val: "songs" },
-    { text: "Quotes", val: "quotes" }
-];
-
-const sounds = [
-    { text: "Feminine Voice", val: "fVoice" },
-    { text: "Masculine Voice", val: "mVoice" },
-    { text: "Child Voice", val: "cVoice" }
-];
-
 class App extends Component {
 
         render()
