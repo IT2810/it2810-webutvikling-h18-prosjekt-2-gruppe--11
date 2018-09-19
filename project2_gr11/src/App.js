@@ -13,18 +13,20 @@ class App extends Component {
         };
     }
 
-   /* getSVG() { return {__html: 'First &middot; Second'}; };
-<div dangerouslySetInnerHTML={getSVG()} /> */
-
     componentDidMount() {
-        let XMLParser = require('react-xml-parser');
         fetch('imageMedia/plainCats/plainbrowncat.svg')
             .then(response => response.text())
             .then(svg => {
                 return this.setState({
                     texts: svg
                 });
-            }
+            },
+                (error) => {
+                    this.setState({
+                        isLoaded: true,
+                        error
+                    });
+                }
             )
         }
 
@@ -41,8 +43,7 @@ class App extends Component {
                 <div dangerouslySetInnerHTML={{__html: this.state.texts}} />;
             </div>
         )
+    }
 }
-}
-
 
 export default App;
