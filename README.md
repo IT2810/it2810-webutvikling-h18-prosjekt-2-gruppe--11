@@ -19,7 +19,7 @@ Utifra følgende kategori genereres det fire kombinasjoner av valgt underkategor
     * Maskulin stemme
     * Barnestemme
 * Tekst
-    * Haiku
+    * Sang
     * Dikt
     * Sitat
     
