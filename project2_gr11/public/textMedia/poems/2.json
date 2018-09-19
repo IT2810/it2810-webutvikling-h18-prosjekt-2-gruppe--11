@@ -1,5 +1,19 @@
 {
   "title": "The Cats Will Know",
   "author": "Cesare Pavese",
-  "text": "The cats will know,\nface of springtime;\nand the light rain\nand the hyacinth dawn\nthat wrench the heart of him\nwho hopes no more for you—\nthey are the sad smile\nyou smile by yourself.\n\nThere will be other days,\nother voices and renewals.\nFace of springtime,\nwe will suffer at daybreak.\n"
+  "text": [
+    "The cats will know,",
+    "face of springtime;",
+    "and the light rain",
+    "and the hyacinth dawn",
+    "that wrench the heart of him",
+    "who hopes no more for you-",
+    "they are the sad smile",
+    "you smile by yourself.",
+    "",
+    "There will be other days,",
+    "other voices and renewals.",
+    "Face of springtime,",
+    "we will suffer at daybreak."
+  ]
 }

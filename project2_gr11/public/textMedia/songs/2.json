@@ -1,5 +1,17 @@
 {
   "title": "The Lion Sleeps Tonight",
   "artist": "The Tokens",
-  "text": "Weeheeheehee, dee heeheeheehee, weeoh aweem away\nWeeheeheehee, dee heeheeheehee, weeoh aweem away\nA-weema-weh, a-weema-weh, a-weema-weh, a-weema-weh\nA-weema-weh, a-weema-weh, a-weema-weh, a-weema-weh\nA-weema-weh, a-weema-weh, a-weema-weh, a-weema-weh\nA-weema-weh, a-weema-weh, a-weema-weh, a-weema-weh\n\nIn the jungle, the mighty jungle\nThe lion sleeps tonight\nIn the jungle, the quiet jungle\nThe lion sleeps tonight – ho, ho!"
+  "text": [
+    "Weeheeheehee, dee heeheeheehee, weeoh aweem away",
+    "Weeheeheehee, dee heeheeheehee, weeoh aweem away",
+    "A-weema-weh, a-weema-weh, a-weema-weh, a-weema-weh",
+    "A-weema-weh, a-weema-weh, a-weema-weh, a-weema-weh",
+    "A-weema-weh, a-weema-weh, a-weema-weh, a-weema-weh",
+    "A-weema-weh, a-weema-weh, a-weema-weh, a-weema-weh",
+    "",
+    "In the jungle, the mighty jungle",
+    "The lion sleeps tonight",
+    "In the jungle, the quiet jungle",
+    "The lion sleeps tonight – ho, ho!"
+    ]
 }

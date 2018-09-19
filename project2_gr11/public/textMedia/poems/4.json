@@ -1,5 +1,12 @@
 {
   "title": "Consider Two Cats",
   "author": "Charles Oluf Olsen",
-  "text": "Consider two cats in the sun\nWho, slit-eyed, knit four threads of light\nInto silence worn at night.\n\nConsider two cats in the sun\nWho, lazy and languorous, take their ease"
+  "text": [
+    "Consider two cats in the sun",
+    "Who, slit-eyed, knit four threads of light",
+    "Into silence worn at night.",
+    "",
+    "Consider two cats in the sun",
+    "Who, lazy and languorous, take their ease"
+  ]
 }

@@ -2,6 +2,15 @@ import React, { Component } from 'react';
 import './App.css';
 import { MediaTypeMenu } from "./components/MediaTypeMenu";
 
+function textFormatter(t) {
+    let s = '';
+    for(let i = 0; i < t.text.length; i++){
+        s+= t.text[i] + '<br/>';
+    };
+    const el = <p dangerouslySetInnerHTML={{__html: s}} />;
+    return el;
+}
+
 class App extends Component {
 
     constructor(props) {
@@ -18,7 +27,7 @@ class App extends Component {
         //AJAX call for text and image media
         Promise.all([
             fetch('imageMedia/plainCats/1.svg'),
-            fetch("textMedia/poems/1.json")
+            fetch("textMedia/poems/4.json")
         ])
             .then(( [response1, response2] ) => Promise.all([response1.text() ,response2.json()])
             .then(( [svg, jsonText] ) => {
@@ -44,10 +53,13 @@ class App extends Component {
             } else if (!isLoaded) {
                 return <div>Loading...</div>;
             } else {
+
                 //TODO: index chooses text
                 return (
                     <div className="textfield">
                         <h2>{texts.title}</h2>
+                        <div>{textFormatter(texts)}</div>
+                        <p>-{texts.author}</p>
                     </div>
                 );
             }

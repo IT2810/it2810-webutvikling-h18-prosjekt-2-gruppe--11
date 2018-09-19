@@ -1,5 +1,19 @@
 {
   "title": "Ella Mason and Her Eleven Cats",
   "author": "Sylvia Plath",
-  "text": "Old Ella Mason Keeps cats, eleven at last count,\nIn her ramshacle house off Somerset Terrace;\nPeople make queries\nOn seeing our neighbour's cat-haunt,\nSaying:\"Something's addled in a woman who accommodates\nThat many cats.\"\n\nRum and red-faced as a watermelon, her voice\nLong gone to wheeze and seed, Ella Mason\nFor no good reason\nPlays hostess to tabby, tom and increase,\nWith cream and chicken-gut feasting the palates\nOf finical cats."
+  "text": [
+    "Old Ella Mason Keeps cats, eleven at last count,",
+    "People make queries",
+    "In her ramshacle house off Somerset Terrace;",
+    "On seeing our neighbour's cat-haunt,",
+    "Saying: \"Something's addled in a woman who accommodates",
+    "That many cats.",
+    "",
+    "Rum and red-faced as a watermelon, her voice",
+    "Long gone to wheeze and seed, Ella Mason",
+    "For no good reason",
+    "Plays hostess to tabby, tom and increase,",
+    "With cream and chicken-gut feasting the palates",
+    "Of finical cats."
+  ]
 }
