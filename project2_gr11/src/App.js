@@ -23,10 +23,16 @@ class App extends Component {
         };
     }
 
+    randomNumber() {
+        let number = Math.floor((Math.random() * 4) + 1);
+        return number;
+    }
+
     componentDidMount() {
+        let nr = this.randomNumber();
         //AJAX call for text and image media
         Promise.all([
-            fetch('imageMedia/plainCats/1.svg'),
+            fetch('imageMedia/plainCats/' + nr + '.svg'),
             fetch("textMedia/poems/4.json")
         ])
             .then(( [response1, response2] ) => Promise.all([response1.text() ,response2.json()])
@@ -69,15 +75,16 @@ class App extends Component {
 
         return (
             <div className="App">
+
                 <div dangerouslySetInnerHTML={{__html: this.state.images}} />
 
                 <div className="textContainer">
                 </div>
 
-                    {/*AJAX test render of text title*/}
-                    <div className="textContainer">
-                        {this.renderTextContent()}
-                    </div>
+                {/*AJAX test render of text title*/}
+                <div className="textContainer">
+                    {this.renderTextContent()}
+                </div>
 
                 {/*RADIOBUTTONS*/}
                 <div id="mediaTypeMenu">
