@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-//import { CallAJAXTextMedia } from "./components/CallAJAXTextMedia";
 import { MediaTypeMenu } from "./components/MediaTypeMenu";
 
 const cats = [
@@ -37,9 +36,7 @@ class App extends Component {
                     <p className="App-intro">
                         To get started, edit <code>src/App.js</code> and save to reload.
                     </p>
-                    {/*AJAX test render of text title*/}
                     <div className="textContainer">
-                        {/*<CallAJAXTextMedia/>*/}
                     </div>
 
                     {/*RADIOBUTTONS*/}
