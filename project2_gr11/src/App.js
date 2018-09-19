@@ -26,10 +26,17 @@ class App extends Component {
                     <div id="mediaTypeMenu">
                         <MediaTypeMenu/>
                     </div>
+
+                    <div>
+                        <audio controls>
+                            <source src="sound_media/surpriseSounds/1.mp3" type="audio/mpeg" />
+                            Your browser does not support the audio element.
+                        </audio>
+                    </div>
+
                 </div>
             );
         }
     }
-
 
 export default App;
