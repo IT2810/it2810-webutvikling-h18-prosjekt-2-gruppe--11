@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { MakeRadioButtons } from "./MakeRadioButtons";
 
+//Change radio button names and values here:
 const cats = [
     { text: "Spotted", val: "spotted" },
     { text: "Striped", val: "striped" },
