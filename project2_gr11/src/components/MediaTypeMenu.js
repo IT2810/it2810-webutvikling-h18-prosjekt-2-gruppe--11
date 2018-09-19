@@ -68,14 +68,12 @@ export class MediaTypeMenu extends Component {
     render() {
         const { selectedCat, selectedText, selectedSound } = this.state;
         return (
-            <div>
                 <form onSubmit={this.handleSubmit}>
                     <MakeRadioButtons ifChecked={selectedCat} typesChange={this.handleCatChange} categoryName="cats" lists={cats} titleMedia="Cat Types: "/>
                     <MakeRadioButtons ifChecked={selectedText} typesChange={this.handleTextChange} categoryName="texts" lists={texts} titleMedia="Text Types: "/>
                     <MakeRadioButtons ifChecked={selectedSound} typesChange={this.handleSoundChange} categoryName="sounds" lists={sounds} titleMedia="Sound Types: "/>
                     <input type="submit" value="Generate"/>
                 </form>
-            </div>
         );
     }
 }

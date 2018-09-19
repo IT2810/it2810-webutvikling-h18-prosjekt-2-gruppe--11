@@ -43,7 +43,9 @@ class App extends Component {
                     </div>
 
                     {/*RADIOBUTTONS*/}
-                    <MediaTypeMenu/>
+                    <div id="mediaTypeMenu">
+                        <MediaTypeMenu/>
+                    </div>
                 </div>
             );
         }
