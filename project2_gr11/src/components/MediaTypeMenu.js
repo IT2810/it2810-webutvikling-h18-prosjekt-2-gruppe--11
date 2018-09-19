@@ -69,7 +69,6 @@ export class MediaTypeMenu extends Component {
             </div>
         );
     }
-
 }
 
 class MakeRadioButtons extends Component {
@@ -85,10 +84,10 @@ class MakeRadioButtons extends Component {
             <div className="mediaTypeRB">
                 <h2>{titleMedia}</h2>
                 {mediaList.map(item => (
-                    <label>
-                        <input type="radio" name={category} value={item.val} onChange={typesChange} checked={ifChecked === item.val}/>
-                        {item.text}<br />
-                    </label>
+                        <label key={item.val}>
+                            <input type="radio" name={category} value={item.val} onChange={typesChange} checked={ifChecked === item.val}/>
+                            {item.text}<br />
+                        </label>
                 ))}
             </div>
         );
