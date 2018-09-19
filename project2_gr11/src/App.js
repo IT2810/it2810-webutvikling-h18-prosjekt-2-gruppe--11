@@ -14,7 +14,7 @@ class App extends Component {
     }
 
     componentDidMount() {
-        fetch('imageMedia/plainCats/plainbrowncat.svg')
+        fetch('imageMedia/plainCats/1.svg')
             .then(response => response.text())
             .then(svg => {
                 return this.setState({
