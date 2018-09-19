@@ -2,22 +2,46 @@
 
 // Libraries
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+import Toolbar from './components/Toolbar/Toolbar';
+import SideDrawer from './components/SideDrawer/SideDrawer';
+import Backdrop from './components/Backdrop/Backdrop';
 
 class App extends Component {
+    state = {
+        sideDrawerOpen: false
+    };
 
-  render() {
+    drawerToggleClickHandler = () => {
+        this.setState((prevState) => {
+            return {sideDrawerOpen: !prevState.sideDrawerOpen};
+        });
+    };
 
-    return (
-        <nav>
-            <ul>hei</ul>
-            <ul>hallo</ul>
-            <ul>hey</ul>
-            <ul>yo</ul>
-        </nav>
-    );
-  }
+    backDropClickHandler = () => {
+      this.setState({sideDrawerOpen: false});
+    };
+
+    render() {
+        let backdrop;
+
+        if(this.state.sideDrawerOpen) {
+            backdrop = <Backdrop click={this.backDropClickHandler}/>;
+        }
+
+        return (
+            <div style={{height: '100%'}}>
+                <Toolbar drawerClickHandler={this.drawerToggleClickHandler}/>
+                <SideDrawer show={this.state.sideDrawerOpen}/>
+                {backdrop}
+                {/* Normal curly indicates some dynamic value*/
+                /* Double curly creates a Javascript object*/}
+                <main style={{marginTop: '64px'}}>
+                    <p> This is the page content!</p>
+                </main>
+            </div>
+        );
+    }
 }
 
 export default App;
