@@ -61,7 +61,7 @@ export class MediaTypeMenu extends Component {
 
     handleSubmit(event) {
         //TODO: handle submit
-        alert("Selected cat: " + this.state.selectedCat + "\nSelected text: " + this.state.selectedText + "\nSelected song: " + this.state.selectedSong);
+        alert("Selected cat: " + this.state.selectedCat + "\nSelected text: " + this.state.selectedText + "\nSelected song: " + this.state.selectedSound);
         event.preventDefault();
     }
 
@@ -75,11 +75,6 @@ export class MediaTypeMenu extends Component {
                     <MakeRadioButtons ifChecked={selectedSound} typesChange={this.handleSoundChange} categoryName="sounds" lists={sounds} titleMedia="Sound Types: "/>
                     <input type="submit" value="Generate"/>
                 </form>
-
-                {/*TODO: Remove test divs*/}
-                <div>{selectedCat}</div>
-                <div>{selectedText}</div>
-                <div>{selectedSound}</div>
             </div>
         );
     }
