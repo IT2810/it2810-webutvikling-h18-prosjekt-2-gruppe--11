@@ -3,9 +3,9 @@ import { MakeRadioButtons } from "./MakeRadioButtons";
 
 //Change radio button names and values here:
 const cats = [
-    { text: "Spotted", val: "spotted" },
-    { text: "Striped", val: "striped" },
-    { text: "Plain", val: "plain" }
+    { text: "Spotted", val: "spottedCats" },
+    { text: "Striped", val: "stripedCats" },
+    { text: "Plain", val: "plainCats" }
 ];
 
 const texts = [
@@ -15,9 +15,9 @@ const texts = [
 ];
 
 const sounds = [
-    { text: "Feminine Voice", val: "fVoice" },
-    { text: "Masculine Voice", val: "mVoice" },
-    { text: "Child Voice", val: "cVoice" }
+    { text: "Big Cats", val: "bigCat" },
+    { text: "Small Cats", val: "smallCat" },
+    { text: "Surprise Sounds", val: "surpriseSounds" }
 ];
 
 export class MediaTypeMenu extends Component {

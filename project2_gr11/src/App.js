@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import { CallAJAXTextMedia } from "./components/CallAJAXTextMedia";
 import { MediaTypeMenu } from "./components/MediaTypeMenu";
 
 class App extends Component {
@@ -11,16 +9,23 @@ class App extends Component {
         this.state = {
             error: null,
             isLoaded: false,
-            texts: ''
+            images: '',
+            texts: []
         };
     }
 
     componentDidMount() {
-        fetch('imageMedia/plainCats/1.svg')
-            .then(response => response.text())
-            .then(svg => {
-                return this.setState({
-                    texts: svg
+        //AJAX call for text and image media
+        Promise.all([
+            fetch('imageMedia/plainCats/1.svg'),
+            fetch("textMedia/poems/1.json")
+        ])
+            .then(( [response1, response2] ) => Promise.all([response1.text() ,response2.json()])
+            .then(( [svg, jsonText] ) => {
+                this.setState({
+                    isLoaded: true,
+                    images: svg,
+                    texts: jsonText
                 });
             },
                 (error) => {
@@ -29,20 +34,37 @@ class App extends Component {
                         error
                     });
                 }
-            )
+            ))
+        }
+
+        renderTextContent() {
+            const { error, isLoaded, texts } = this.state;
+            if (error) {
+                return <div>Error: {error.message}</div>;
+            } else if (!isLoaded) {
+                return <div>Loading...</div>;
+            } else {
+                //TODO: index chooses text
+                return (
+                    <div className="textfield">
+                        <h2>{texts.title}</h2>
+                    </div>
+                );
+            }
         }
 
     render() {
+
         return (
             <div className="App">
-                <div dangerouslySetInnerHTML={{__html: this.state.texts}} />
+                <div dangerouslySetInnerHTML={{__html: this.state.images}} />
 
                 <div className="textContainer">
                 </div>
 
                     {/*AJAX test render of text title*/}
                     <div className="textContainer">
-                        <CallAJAXTextMedia/>
+                        {this.renderTextContent()}
                     </div>
 
                 {/*RADIOBUTTONS*/}
