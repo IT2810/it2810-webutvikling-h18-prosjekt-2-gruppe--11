@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 //import { CallAJAXTextMedia } from "./components/CallAJAXTextMedia";
-import { RadioButtons } from "./components/RadioButtons";
+import { MediaTypeMenu } from "./components/MediaTypeMenu";
 
 const cats = [
     { text: "Spotted", val: "spotted" },
@@ -24,6 +24,8 @@ const sounds = [
 
 class App extends Component {
 
+    //Form
+
         render()
         {
             return (
@@ -41,11 +43,7 @@ class App extends Component {
                     </div>
 
                     {/*RADIOBUTTONS*/}
-                    <div>
-                        <RadioButtons typesTitle="Cat Types:" lists={cats} typesName="catTypes" />
-                        <RadioButtons typesTitle="Text Types:" lists={texts} typesName="textTypes" />
-                        <RadioButtons typesTitle="Sounds Types:" lists={sounds} typesName="soundTypes" />
-                    </div>
+                    <MediaTypeMenu/>
                 </div>
             );
         }
