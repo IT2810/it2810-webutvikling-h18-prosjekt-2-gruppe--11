@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { MakeRadioButtons } from "./MakeRadioButtons";
 
 const cats = [
     { text: "Spotted", val: "spotted" },
@@ -25,11 +26,12 @@ export class MediaTypeMenu extends Component {
         this.state = {
             selectedCat: '',
             selectedText: '',
-            values: []
+            selectedSound: ''
         };
 
         this.handleCatChange = this.handleCatChange.bind(this);
         this.handleTextChange = this.handleTextChange.bind(this);
+        this.handleSoundChange = this.handleSoundChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -49,48 +51,36 @@ export class MediaTypeMenu extends Component {
         );
     }
 
+    handleSoundChange(event) {
+        this.setState(
+            {
+                selectedSound: event.target.value
+            }
+        );
+    }
+
     handleSubmit(event) {
-        alert("Selected cat: " + this.state.selectedCat + "\nSelected text: " + this.state.selectedText);
+        //TODO: handle submit
+        alert("Selected cat: " + this.state.selectedCat + "\nSelected text: " + this.state.selectedText + "\nSelected song: " + this.state.selectedSong);
         event.preventDefault();
     }
 
     render() {
-        const { selectedCat, selectedText } = this.state;
+        const { selectedCat, selectedText, selectedSound } = this.state;
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
                     <MakeRadioButtons ifChecked={selectedCat} typesChange={this.handleCatChange} categoryName="cats" lists={cats} titleMedia="Cat Types: "/>
                     <MakeRadioButtons ifChecked={selectedText} typesChange={this.handleTextChange} categoryName="texts" lists={texts} titleMedia="Text Types: "/>
+                    <MakeRadioButtons ifChecked={selectedSound} typesChange={this.handleSoundChange} categoryName="sounds" lists={sounds} titleMedia="Sound Types: "/>
                     <input type="submit" value="Generate"/>
                 </form>
 
+                {/*TODO: Remove test divs*/}
                 <div>{selectedCat}</div>
                 <div>{selectedText}</div>
+                <div>{selectedSound}</div>
             </div>
         );
     }
-}
-
-class MakeRadioButtons extends Component {
-
-    render() {
-        const titleMedia = this.props.titleMedia;
-        const mediaList = this.props.lists;
-        const category = this.props.categoryName;
-        const typesChange = this.props.typesChange;
-        const ifChecked = this.props.ifChecked;
-
-        return (
-            <div className="mediaTypeRB">
-                <h2>{titleMedia}</h2>
-                {mediaList.map(item => (
-                        <label key={item.val}>
-                            <input type="radio" name={category} value={item.val} onChange={typesChange} checked={ifChecked === item.val}/>
-                            {item.text}<br />
-                        </label>
-                ))}
-            </div>
-        );
-    }
-
 }
