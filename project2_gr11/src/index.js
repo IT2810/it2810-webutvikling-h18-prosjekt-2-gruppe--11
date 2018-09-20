@@ -1,3 +1,5 @@
+// Defines the main entry point of the application
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
