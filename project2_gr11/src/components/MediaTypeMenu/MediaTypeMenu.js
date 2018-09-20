@@ -38,7 +38,7 @@ export class MediaTypeMenu extends Component {
         this.handleSoundChange = this.handleSoundChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
 
-        this.testCat = this.testCat.bind(this);
+        //this.testCat = this.testCat.bind(this);
     }
 
 
@@ -84,10 +84,6 @@ export class MediaTypeMenu extends Component {
 
     render() {
         const { selectedCat, selectedText, selectedSound } = this.state;
-        const multiCats = [<ImageMedia sim ='spottedCats' />, ""];
-        const multiCats2 = [<ImageMedia sim ='PlainCats' />, <ImageMedia sim='plainCats' />];
-        const cat1 = <ImageMedia sim ={selectedCat} />;
-        const cat2 = <ImageMedia sim ='plainCats' />
         return (
             <div>
                 <form onSubmit={this.testCat}>
@@ -98,8 +94,7 @@ export class MediaTypeMenu extends Component {
                     {/*console.log(selectedCat + 'mordiemann')*/}
                 </form>
 
-                <div>{selectedCat}</div>
-                <div id="testCats">{this.state.isToggleOn ? cat2  : multiCats } </div>
+                {/*<div>{selectedCat}</div>*/}
                 <TextMedia/>
             </div>
         );

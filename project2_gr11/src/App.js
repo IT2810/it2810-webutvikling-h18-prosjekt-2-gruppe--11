@@ -8,9 +8,6 @@ import React, { Component } from 'react';
 // Comment
 import { MediaTypeMenu } from "./components/MediaTypeMenu/MediaTypeMenu";
 
-//
-import { Content } from "./components/Content/Content";
-
 // Menu bar
 import Toolbar from './components/Toolbar/Toolbar';
 import SideDrawer from './components/SideDrawer/SideDrawer';
@@ -44,7 +41,7 @@ class App extends Component {
     handleTEST(event) {
         event.preventDefault();
         const str = event.target.id;
-        const num =  parseInt(str.slice(3));
+        const num =  parseInt(str.slice(3), 10);
         console.log(num);
         this.setState({
             currentState: num,
@@ -55,35 +52,31 @@ class App extends Component {
     render() {
         let backdrop;
 
-        //TEST
-        let tabs = [<ImageMedia key={'mordiemann'} sim='spottedCats'/>, <ImageMedia key={'mordiedame'} sim='plainCats'/>, this.state.currentTab1 ,<div>Dattradi</div>];
-
         // If sidedrawer is open. close if backdrop is clicked
         if(this.state.sideDrawerOpen) {
             backdrop = <Backdrop click={this.backDropClickHandler}/>;
         }
+
+        //TEST
+        let tabs = [
+            <ImageMedia key={'mordiemann'} sim='spottedCats'/>,
+            <ImageMedia key={'mordiedame'} sim='plainCats'/>,
+            this.state.currentTab1 ,
+            <div>Dattradi</div>
+        ];
         return (
              <div style={{height: '100%'}}>
-
-                 <div id="yerMumsTabContent">
-                     {tabs[this.state.currentState]}
-                     {/*this.state.currentTab1*/}
-                 </div>
 
                 {/*Menu-stuff*/}
                 <div style={{padding: '15px', textAlign: 'center'}}><h1> Mediautstilling </h1></div>
                 <Toolbar drawerClickHandler={this.drawerToggleClickHandler} click={this.handleTEST}/>
-                <SideDrawer show={this.state.sideDrawerOpen}/>
+                <SideDrawer show={this.state.sideDrawerOpen} click={this.handleTEST}/>
                 {backdrop}
-                <main style={{marginTop: '64px'}}>
-                    <p> This is the page content!</p>
-                </main>
 
-                 {/*Random media*/}
-                 <div>
-                     <Content/>
+                 <div id="randomElement">
+                     {tabs[this.state.currentState]}
+                     {/*this.state.currentTab1*/}
                  </div>
-
 
                  {/*RADIOBUTTONS*/}
                 <div id="mediaTypeMenu">
