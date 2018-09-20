@@ -1,7 +1,7 @@
 import {Component} from "react";
 import React from "react";
 
-export class MakeRadioButtons extends Component {
+export class RadioButtons extends Component {
 
     render() {
         const titleMedia = this.props.titleMedia;

@@ -14,10 +14,10 @@ const toolbar = props => (
             <div className="spacer" />
             <div className="toolbar_navigation-items">
                 <ul>
-                    <li><a href="/">Tab1</a></li>
-                    <li><a href="/">Tab2</a></li>
-                    <li><a href="/">Tab3</a></li>
-                    <li><a href="/">Tab4</a></li>
+                    <li><a href="#" onClick={props.click}>Tab 1</a></li>
+                    <li><a href="#" onClick={props.click}>Tab 2</a></li>
+                    <li><a href="#" onClick={props.click}>Tab 3</a></li>
+                    <li><a href="#" onClick={props.click}>Tab 4</a></li>
                 </ul>
             </div>
         </nav>
