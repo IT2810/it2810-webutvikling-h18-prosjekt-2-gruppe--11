@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { RadioButtons } from "../RadioButtons/RadioButtons";
+import {ImageMedia} from "../MediaTypes/ImageMedia";
+import {TextMedia} from "../MediaTypes/TextMedia";
 
 //Change radio button names and values here:
 const cats = [
@@ -27,14 +29,19 @@ export class MediaTypeMenu extends Component {
         this.state = {
             selectedCat: '',
             selectedText: '',
-            selectedSound: ''
+            selectedSound: '',
+            isToggleOn: true
         };
 
         this.handleCatChange = this.handleCatChange.bind(this);
         this.handleTextChange = this.handleTextChange.bind(this);
         this.handleSoundChange = this.handleSoundChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+
+        this.testCat = this.testCat.bind(this);
     }
+
+
 
     handleCatChange(event) {
         this.setState(
@@ -66,15 +73,35 @@ export class MediaTypeMenu extends Component {
         event.preventDefault();
     }
 
+    testCat(event) {
+        event.preventDefault();
+        this.setState(state =>({
+            isToggleOn: !state.isToggleOn
+
+        }));
+        console.log(this.state.isToggleOn);
+    }
+
     render() {
         const { selectedCat, selectedText, selectedSound } = this.state;
+        const multiCats = [<ImageMedia sim ='spottedCats' />, ""];
+        const multiCats2 = [<ImageMedia sim ='PlainCats' />, <ImageMedia sim='plainCats' />];
+        const cat1 = <ImageMedia sim ={selectedCat} />;
+        const cat2 = <ImageMedia sim ='plainCats' />
         return (
-                <form onSubmit={this.handleSubmit}>
+            <div>
+                <form onSubmit={this.testCat}>
                     <RadioButtons ifChecked={selectedCat} typesChange={this.handleCatChange} categoryName="cats" lists={cats} titleMedia="Cat Types: "/>
                     <RadioButtons ifChecked={selectedText} typesChange={this.handleTextChange} categoryName="texts" lists={texts} titleMedia="Text Types: "/>
                     <RadioButtons ifChecked={selectedSound} typesChange={this.handleSoundChange} categoryName="sounds" lists={sounds} titleMedia="Sound Types: "/>
-                    <input type="submit" value="Generate"/>
+                    <input type="submit" value="Generate" />
+                    {/*console.log(selectedCat + 'mordiemann')*/}
                 </form>
+
+                <div>{selectedCat}</div>
+                <div id="testCats">{this.state.isToggleOn ? cat2  : multiCats } </div>
+                <TextMedia/>
+            </div>
         );
     }
 }
