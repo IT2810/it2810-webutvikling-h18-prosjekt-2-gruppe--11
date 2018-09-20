@@ -11,6 +11,8 @@ import { MediaTypeMenu } from "./components/MediaTypeMenu/MediaTypeMenu";
 //
 import { Content } from "./components/Content/Content";
 
+import "./Style.css";
+
 // Menu bar
 import Toolbar from './components/Toolbar/Toolbar';
 import SideDrawer from './components/SideDrawer/SideDrawer';
@@ -49,28 +51,30 @@ class App extends Component {
             backdrop = <Backdrop click={this.backDropClickHandler}/>;
         }
         return (
-             <div style={{height: '100%'}}>
+            <div id="content">
                 {/*Menu-stuff*/}
-                <div style={{padding: '15px', textAlign: 'center'}}><h1> Mediautstilling </h1></div>
-                <Toolbar drawerClickHandler={this.drawerToggleClickHandler}/>
-                <SideDrawer show={this.state.sideDrawerOpen}/>
-                {backdrop}
-                <main style={{marginTop: '64px'}}>
-                    <p> This is the page content!</p>
-                </main>
+                <div class="tabs">
+                    <div><h1> Mediautstilling </h1></div>
+                    <Toolbar drawerClickHandler={this.drawerToggleClickHandler}/>
+                    <SideDrawer show={this.state.sideDrawerOpen}/>
+                    {backdrop}
+                    <main style={{marginTop: '64px'}}>
+                        <p> This is the page content!</p>
+                    </main>
+                </div>
 
                  {/*Random media*/}
-                 <div>
+                 <div class="contents">
                      <Content/>
                  </div>
 
 
                  {/*RADIOBUTTONS*/}
-                <div id="mediaTypeMenu">
+                <div id="mediaTypeMenu" class="menu">
                     <MediaTypeMenu/>
                 </div>
 
-                <div>
+                <div class="audio">
                   {/*Random audio*/}
                     <audio controls>
                         <source src="soundMedia/surpriseSounds/1.mp3" type="audio/mpeg" />

@@ -32,7 +32,7 @@ export class Content extends Component {
         let nr = this.randomNumber();
         //AJAX call for text and image media
         Promise.all([
-            fetch('imageMedia/plainCats/' + nr + '.svg'),
+            fetch('imageMedia/plainCats/1.svg'),
             fetch("textMedia/poems/4.json")
         ])
             .then(( [response1, response2] ) => Promise.all([response1.text() ,response2.json()])
@@ -74,7 +74,9 @@ export class Content extends Component {
         return (
             <div>
                 {/*Render random image*/}
-                <div dangerouslySetInnerHTML={{__html: this.state.images}} />
+                <div className="imageContainer">
+                    <div className="svg" dangerouslySetInnerHTML={{__html: this.state.images}} />
+                </div>
 
                 <div className="textContainer"></div>
 
