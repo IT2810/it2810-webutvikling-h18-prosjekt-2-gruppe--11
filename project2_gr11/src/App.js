@@ -1,11 +1,21 @@
-// Base of the entire site (The presentation)
+/*
+ Base of the entire site (The presentation)
+  */
 
 // Libraries
 import React, { Component } from 'react';
 
+
 import Toolbar from './components/Toolbar/Toolbar';
 import SideDrawer from './components/SideDrawer/SideDrawer';
 import Backdrop from './components/Backdrop/Backdrop';
+
+// TODO:
+// TODO:
+// TODO:
+
+import MediaBuilder from './containers/MediaBuilder/MediaBuilder';
+
 
 class App extends Component {
     state = {
@@ -31,13 +41,13 @@ class App extends Component {
 
         return (
             <div style={{height: '100%'}}>
+                <div style={{padding: '15px', textAlign: 'center'}}><h1> Mediautstilling </h1></div>
                 <Toolbar drawerClickHandler={this.drawerToggleClickHandler}/>
                 <SideDrawer show={this.state.sideDrawerOpen}/>
                 {backdrop}
-                {/* Normal curly indicates some dynamic value*/
-                /* Double curly creates a Javascript object*/}
                 <main style={{marginTop: '64px'}}>
                     <p> This is the page content!</p>
+                    <MediaBuilder/>
                 </main>
             </div>
         );
