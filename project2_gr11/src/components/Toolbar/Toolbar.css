@@ -1,6 +1,6 @@
 .toolbar {
     /* Paragraph is not visible because of the fixed-position*/
-    position: fixed;
+    position: static;
     width: 100%;
     background: orange;
     height: 56px;
