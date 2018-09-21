@@ -4,7 +4,7 @@ import classes from './Layout.css';
 import {Content} from "../Content/Content";
 import SideDrawer from "../Navigation/SideDrawer/SideDrawer";
 import Backdrop from "../Navigation/Backdrop/Backdrop";
-import {ImageMedia} from "../Content/MediaTypes/ImageMedia";
+import { ImageMedia } from "../Content/MediaTypes/ImageMedia";
 
 function randomNumber() {
     let number = Math.floor((Math.random() * 4) + 1);
