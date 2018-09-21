@@ -1,7 +1,11 @@
+/*
+Builder
+ */
+
 import React, { Component } from 'react';
 import { RadioButtons } from "../RadioButtons/RadioButtons";
-import {ImageMedia} from "../MediaTypes/ImageMedia";
-import {TextMedia} from "../MediaTypes/TextMedia";
+import {ImageMedia} from "../Content/MediaTypes/ImageMedia";
+import {TextMedia} from "../Content/MediaTypes/TextMedia";
 
 //Change radio button names and values here:
 const cats = [
@@ -41,7 +45,10 @@ export class MediaTypeMenu extends Component {
         //this.testCat = this.testCat.bind(this);
     }
 
-
+    //
+    componentWillUpdate() {
+        console.log('[Radio button will update]');
+    }
 
     handleCatChange(event) {
         this.setState(
@@ -92,8 +99,10 @@ export class MediaTypeMenu extends Component {
                     <RadioButtons ifChecked={selectedSound} typesChange={this.handleSoundChange} categoryName="sounds" lists={sounds} titleMedia="Sound Types: "/>
                     <input type="submit" value="Generate" />
                 </form>
-
+                <div>
                 <TextMedia/>
+                </div>
+
             </div>
         );
     }

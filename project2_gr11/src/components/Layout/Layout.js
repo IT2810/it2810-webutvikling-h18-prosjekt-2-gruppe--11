@@ -4,7 +4,7 @@ import classes from './Layout.css';
 import {Content} from "../Content/Content";
 import SideDrawer from "../Navigation/SideDrawer/SideDrawer";
 import Backdrop from "../Navigation/Backdrop/Backdrop";
-import {ImageMedia} from "../MediaTypes/ImageMedia";
+import {ImageMedia} from "../Content/MediaTypes/ImageMedia";
 
 export class Layout extends Component {
     constructor(props) {

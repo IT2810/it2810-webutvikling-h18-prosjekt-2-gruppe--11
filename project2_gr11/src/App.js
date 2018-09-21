@@ -9,6 +9,7 @@ import React, { Component } from 'react';
 import { MediaTypeMenu } from "./components/MediaTypeMenu/MediaTypeMenu";
 
 import {Layout} from './components/Layout/Layout';
+import {ImageMedia} from "./components/Content/MediaTypes/ImageMedia";
 
 class App extends Component {
     render() {
@@ -29,6 +30,10 @@ class App extends Component {
                         Your browser does not support the audio element.
                     </audio>
                 </div>
+
+                 <div>
+                     <ImageMedia sim='spottedCats'/>
+                 </div>
             </div>
         )
     }
