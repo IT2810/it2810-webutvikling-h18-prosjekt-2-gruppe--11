@@ -87,3 +87,6 @@ Alle bilder er laget av [Terdpongvector](https://www.freepik.com/terdpongvector)
 Alle tekster har forfatter oppgitt i sine json-filer, og forfatter vises i tillegg på nettsiden når teksten blir fremstilt.
 
 Alle lyder har forfatter oppgitt i filmappevisning.
+
+https://www.academind.com/learn/react/snippets/navbar-side-drawer/
+
