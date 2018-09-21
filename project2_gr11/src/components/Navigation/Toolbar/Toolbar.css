@@ -2,7 +2,7 @@
     /* Paragraph is not visible because of the fixed-position*/
     position: static;
     width: 100%;
-    background: orange;
+    background: white;
     height: 56px;
 }
 
@@ -32,14 +32,15 @@
 }
 
 .toolbar_navigation-items a {
-    color: blue;
+    color: gray();
     text-decoration: none;
+    font-weight: bold;
 }
 
 /* */
 .toolbar_navigation-items a:hover,
 .toolbar_navigation-items a:active {
-    color: hotpink;
+    color: cornflowerblue;
 }
 
 /* Hide the menubar on mobile-devices or small screens*/

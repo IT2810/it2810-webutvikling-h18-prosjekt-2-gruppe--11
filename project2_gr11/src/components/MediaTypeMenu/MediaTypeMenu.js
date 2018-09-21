@@ -2,7 +2,6 @@
 Builder
  */
 
-
 import React, { Component } from 'react';
 import { RadioButtons } from "../RadioButtons/RadioButtons";
 import {ImageMedia} from "../Content/MediaTypes/ImageMedia";

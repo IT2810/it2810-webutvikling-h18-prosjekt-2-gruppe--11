@@ -57,9 +57,10 @@ export class ImageMedia extends Component {
         if( !(chosenURL === imagePath) ) {
             this.getImage();
         }
-    }
+                }
 
     render() {
+
         return (
             <div dangerouslySetInnerHTML={{__html: this.state.imageSVG}} />
         );
