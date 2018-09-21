@@ -11,10 +11,10 @@
     max-width: 960px;
     margin: 0 auto;
     grid-template-areas:
-            "tabs tabs tabs tabs"
-            "menu menu menu menu"
-            "contents contents contents contents"
-            "audio audio audio audio";
+            "title title title title"
+            "layout layout layout layout"
+            "audio audio audio audio"
+            "menu menu menu menu";
 }
 @media screen and (min-width: 760px){
     #content{
