@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 export class ImageMedia extends Component {
 
     constructor(props) {
-        super(props);
+        super(props);/**/
         this.state = {
             error: null,
             isLoaded: false,
@@ -11,6 +11,7 @@ export class ImageMedia extends Component {
             imagePath: '',
             savedSVG: {}
         };
+        //bind getImage
     }
 
     getImage() {
@@ -52,11 +53,11 @@ export class ImageMedia extends Component {
 
     componentDidUpdate() {
         const chosenURL = this.props.catURL;
-        const {imagePath} = this.state;
-        if (!(chosenURL === imagePath)) {
+        const { imagePath } = this.state;
+        if( !(chosenURL === imagePath) ) {
             this.getImage();
         }
-    }
+                }
 
     render() {
 

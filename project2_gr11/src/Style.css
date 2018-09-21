@@ -12,7 +12,9 @@
     margin: 0 auto;
     grid-template-areas:
             "title title title title"
-            "layout layout layout layout"
+            "tabs tabs tabs tabs"
+            "contents contents contents contents"
+            "text text text text"
             "audio audio audio audio"
             "menu menu menu menu";
 }
@@ -26,7 +28,9 @@
         margin: 0 auto;
         grid-template-areas:
                 "title title title title"
-                "layout layout layout menu"
+                "tabs tabs tabs tabs"
+                "contents contents contents menu"
+                "text text text menu"
                 "audio audio audio menu";
     }
 }
@@ -40,21 +44,6 @@
     justify-items: center;
     */
 }
-/*
-.imageContainer{
-    position: relative;
-    height: 0;
-    width: 100%;
-    padding: 0;
-    padding-bottom: 100%;
-}
-*/
-
-.layout{
-    grid-area: layout;
-    align-content: center;
-}
-
 .title{
     grid-area: title;
     align-content: center;
@@ -74,5 +63,9 @@
 }
 .audio{
     grid-area: audio;
+    align-content: center;
+}
+.text{
+    grid-area: text;
     align-content: center;
 }
