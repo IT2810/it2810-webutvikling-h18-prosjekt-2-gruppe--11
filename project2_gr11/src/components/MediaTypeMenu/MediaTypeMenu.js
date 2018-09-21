@@ -31,7 +31,7 @@ export class MediaTypeMenu extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            selectedCat: '',
+            selectedCat: 'spottedCats',
             selectedText: '',
             selectedSound: ''
         };
@@ -43,18 +43,13 @@ export class MediaTypeMenu extends Component {
         //this.testCat = this.testCat.bind(this);
     }
 
-    //
-    componentWillUpdate() {
-        console.log('[Radio button will update]');
-    }
-
     handleCatChange(event) {
         this.setState(
             {
                 selectedCat: event.target.value
             }
         );
-        console.log("Selected cat: " + this.state.selectedCat);
+        console.log("Selected cat: " + event.target.value);
     }
 
     handleTextChange(event) {
@@ -63,7 +58,7 @@ export class MediaTypeMenu extends Component {
                 selectedText: event.target.value
             }
         );
-        console.log("Selected text: " + this.state.selectedText);
+        console.log("Selected text: " + event.target.value);
     }
 
     handleSoundChange(event) {
@@ -72,7 +67,7 @@ export class MediaTypeMenu extends Component {
                 selectedSound: event.target.value
             }
         );
-        console.log("Selected song: " + this.state.selectedSound);
+        console.log("Selected song: " + event.target.value);
     }
 
     render() {
@@ -84,9 +79,10 @@ export class MediaTypeMenu extends Component {
                     <RadioButtons ifChecked={selectedText} typesChange={this.handleTextChange} categoryName="texts" lists={texts} titleMedia="Text Types: "/>
                     <RadioButtons ifChecked={selectedSound} typesChange={this.handleSoundChange} categoryName="sounds" lists={sounds} titleMedia="Sound Types: "/>
                 </form>
-                <div>
+{/*                <div>
                 <TextMedia/>
-                </div>
+                </div>*/}
+
 
             </div>
         );
