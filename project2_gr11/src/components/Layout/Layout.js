@@ -6,13 +6,20 @@ import SideDrawer from "../Navigation/SideDrawer/SideDrawer";
 import Backdrop from "../Navigation/Backdrop/Backdrop";
 import {ImageMedia} from "../MediaTypes/ImageMedia";
 
+function randomNumber() {
+    let number = Math.floor((Math.random() * 4) + 1);
+    return number;
+}
+
+let n = [randomNumber(), randomNumber(), randomNumber(), randomNumber()];
+
 export class Layout extends Component {
     constructor(props) {
         super(props);
         this.state = {
             sideDrawerOpen: false,
             currentState: 0,
-            currentTab1: <ImageMedia key={'dattradi'} sim='spottedCats'/>
+            currentTab1: <ImageMedia key={'dattradi'} catURL='spottedCats'/>
         };
         this.handleTEST = this.handleTEST.bind(this);
     }
@@ -33,7 +40,7 @@ export class Layout extends Component {
         event.preventDefault();
         const str = event.target.id;
         const num =  parseInt(str.slice(3), 10);
-        console.log(num);
+        console.log("Page nr: " + num);
         this.setState({
             currentState: num,
         });
@@ -46,13 +53,21 @@ export class Layout extends Component {
             backdrop = <Backdrop click={this.backDropClickHandler}/>;
         }
 
-        //TEST
+        //TEST TODO
+        let t = [
+            'imageMedia/spottedCats/' + n[0] + '.svg',
+            'imageMedia/plainCats/' + n[1] + '.svg',
+            'imageMedia/stripedCats/' + n[2] + '.svg',
+            'imageMedia/plainCats/' + n[3] + '.svg'
+        ]
+
         let tabs = [
-            <ImageMedia key={'1'} sim='spottedCats'/>,
-            <ImageMedia key={'2'} sim='plainCats'/>,
-            <ImageMedia key={'3'} sim='stripedCats'/>,
-            <ImageMedia key={'4'} sim='plainCats'/>,
+            <ImageMedia key={'1'} catURL={t[0]}/>,
+            <ImageMedia key={'2'} catURL={t[1]}/>,
+            <ImageMedia key={'3'} catURL={t[2]}/>,
+            <ImageMedia key={'4'} catURL={t[3]}/>,
         ];
+        
     return(
         <div>
             <div>
