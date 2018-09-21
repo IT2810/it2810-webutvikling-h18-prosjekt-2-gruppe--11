@@ -34,9 +34,11 @@ export class ImageMedia extends Component {
                     });
                 }
             )
+
     }
 
     render() {
+
         return (
             <div dangerouslySetInnerHTML={{__html: this.state.imageSVG}} />
         );
