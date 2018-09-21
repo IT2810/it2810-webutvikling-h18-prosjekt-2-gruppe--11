@@ -33,7 +33,7 @@ export class Layout extends Component {
         event.preventDefault();
         const str = event.target.id;
         const num =  parseInt(str.slice(3), 10);
-        console.log(num);
+        console.log('tabNumber='+ num);
         this.setState({
             currentState: num,
         });
@@ -60,9 +60,12 @@ export class Layout extends Component {
                 <SideDrawer show={this.state.sideDrawerOpen} click={this.handleTEST}/>
                 {backdrop}
             </div>
-            <div id="randomElement">
+            <main className={classes.Content} id="randomElement">
                 {/* Render imageMedia with the tabs key */}
                 {tabs[this.state.currentState]}
+            </main>
+            <div>
+                <Content/>
             </div>
         </div>
     );
