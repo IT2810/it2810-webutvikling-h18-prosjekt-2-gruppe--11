@@ -1,0 +1,78 @@
+.mainPage {
+    font-size: 20px;
+    text-align: center;
+}
+
+#content{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    grid-gap: 10px;
+    max-width: 960px;
+    margin: 0 auto;
+    grid-template-areas:
+            "title title title title"
+            "layout layout layout layout"
+            "audio audio audio audio"
+            "menu menu menu menu";
+}
+@media screen and (min-width: 760px){
+    #content{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: minmax(100px, auto);
+        grid-gap: 10px;
+        max-width: 100%;
+        margin: 0 auto;
+        grid-template-areas:
+                "title title title title"
+                "layout layout layout menu"
+                "audio audio audio menu";
+    }
+}
+#content > *{
+    background: #3bbced;
+    padding: 30px;
+    /*
+    position: relative;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    */
+}
+/*
+.imageContainer{
+    position: relative;
+    height: 0;
+    width: 100%;
+    padding: 0;
+    padding-bottom: 100%;
+}
+*/
+
+.layout{
+    grid-area: layout;
+    align-content: center;
+}
+
+.title{
+    grid-area: title;
+    align-content: center;
+}
+
+.tabs{
+    grid-area: tabs;
+    align-content: center;
+}
+#randomElement {
+    grid-area: contents;
+    align-content: center;
+}
+.menu{
+    grid-area: menu;
+    align-content: center;
+}
+.audio{
+    grid-area: audio;
+    align-content: center;
+}

@@ -4,7 +4,7 @@ import classes from './Layout.css';
 import {Content} from "../Content/Content";
 import SideDrawer from "../Navigation/SideDrawer/SideDrawer";
 import Backdrop from "../Navigation/Backdrop/Backdrop";
-import {ImageMedia} from "../MediaTypes/ImageMedia";
+import {ImageMedia} from "../Content/MediaTypes/ImageMedia";
 
 function randomNumber() {
     let number = Math.floor((Math.random() * 4) + 1);
@@ -40,7 +40,7 @@ export class Layout extends Component {
         event.preventDefault();
         const str = event.target.id;
         const num =  parseInt(str.slice(3), 10);
-        console.log("Page nr: " + num);
+        console.log('tabNumber='+ num);
         this.setState({
             currentState: num,
         });
@@ -61,23 +61,28 @@ export class Layout extends Component {
             'imageMedia/plainCats/' + n[3] + '.svg'
         ]
 
+        //tabs with pictures
         let tabs = [
             <ImageMedia key={'1'} catURL={t[0]}/>,
             <ImageMedia key={'2'} catURL={t[1]}/>,
             <ImageMedia key={'3'} catURL={t[2]}/>,
             <ImageMedia key={'4'} catURL={t[3]}/>,
         ];
-        
+
     return(
         <div>
-            <div>
+            <div className="tabs">
                 <Toolbar drawerClickHandler={this.drawerToggleClickHandler} click={this.handleTEST}/>
                 <SideDrawer show={this.state.sideDrawerOpen} click={this.handleTEST}/>
                 {backdrop}
             </div>
             <main className={classes.Content} id="randomElement">
+                {/* Render imageMedia with the tabs key */}
                 {tabs[this.state.currentState]}
             </main>
+            <div>
+                <Content/>
+            </div>
         </div>
     );
     }
