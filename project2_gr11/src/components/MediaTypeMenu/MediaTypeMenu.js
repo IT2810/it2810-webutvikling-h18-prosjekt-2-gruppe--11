@@ -33,14 +33,12 @@ export class MediaTypeMenu extends Component {
         this.state = {
             selectedCat: '',
             selectedText: '',
-            selectedSound: '',
-            isToggleOn: true
+            selectedSound: ''
         };
 
         this.handleCatChange = this.handleCatChange.bind(this);
         this.handleTextChange = this.handleTextChange.bind(this);
         this.handleSoundChange = this.handleSoundChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
 
         //this.testCat = this.testCat.bind(this);
     }
@@ -56,6 +54,7 @@ export class MediaTypeMenu extends Component {
                 selectedCat: event.target.value
             }
         );
+        console.log("Selected cat: " + this.state.selectedCat);
     }
 
     handleTextChange(event) {
@@ -64,6 +63,7 @@ export class MediaTypeMenu extends Component {
                 selectedText: event.target.value
             }
         );
+        console.log("Selected text: " + this.state.selectedText);
     }
 
     handleSoundChange(event) {
@@ -72,32 +72,17 @@ export class MediaTypeMenu extends Component {
                 selectedSound: event.target.value
             }
         );
+        console.log("Selected song: " + this.state.selectedSound);
     }
-
-    handleSubmit(event) {
-        //TODO: handle submit
-        alert("Selected cat: " + this.state.selectedCat + "\nSelected text: " + this.state.selectedText + "\nSelected song: " + this.state.selectedSound);
-        event.preventDefault();
-    }
-
-  /*  testCat(event) {
-        event.preventDefault();
-        this.setState(state =>({
-            isToggleOn: !state.isToggleOn
-
-        }));
-        console.log(this.state.isToggleOn);
-    }*/
 
     render() {
         const { selectedCat, selectedText, selectedSound } = this.state;
         return (
             <div>
-                <form onSubmit={this.handleSubmit}>
+                <form>
                     <RadioButtons ifChecked={selectedCat} typesChange={this.handleCatChange} categoryName="cats" lists={cats} titleMedia="Cat Types: "/>
                     <RadioButtons ifChecked={selectedText} typesChange={this.handleTextChange} categoryName="texts" lists={texts} titleMedia="Text Types: "/>
                     <RadioButtons ifChecked={selectedSound} typesChange={this.handleSoundChange} categoryName="sounds" lists={sounds} titleMedia="Sound Types: "/>
-                    <input type="submit" value="Generate" />
                 </form>
                 <div>
                 <TextMedia/>

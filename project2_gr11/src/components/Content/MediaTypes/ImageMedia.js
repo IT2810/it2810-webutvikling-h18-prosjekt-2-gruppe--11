@@ -48,7 +48,7 @@ export class ImageMedia extends Component {
 
     // ^comfirms if that works
     componentWillUpdate() {
-        console.log('[Content will update]');
+        console.log('[Image will update]');
     }
 
     render() {
