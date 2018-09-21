@@ -52,28 +52,27 @@
 
 .layout{
     grid-area: layout;
+    align-content: center;
 }
 
 .title{
     grid-area: title;
+    align-content: center;
 }
 
 .tabs{
     grid-area: tabs;
+    align-content: center;
 }
 #randomElement {
     grid-area: contents;
+    align-content: center;
 }
 .menu{
     grid-area: menu;
+    align-content: center;
 }
 .audio{
     grid-area: audio;
+    align-content: center;
 }
-/*.svg {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    left: 0;
-    top: 0;
-} */

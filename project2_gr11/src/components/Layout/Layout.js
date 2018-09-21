@@ -60,10 +60,10 @@ export class Layout extends Component {
                 <SideDrawer show={this.state.sideDrawerOpen} click={this.handleTEST}/>
                 {backdrop}
             </div>
-            <main className={classes.Content} id="randomElement">
+            <div id="randomElement">
                 {/* Render imageMedia with the tabs key */}
                 {tabs[this.state.currentState]}
-            </main>
+            </div>
         </div>
     );
     }
