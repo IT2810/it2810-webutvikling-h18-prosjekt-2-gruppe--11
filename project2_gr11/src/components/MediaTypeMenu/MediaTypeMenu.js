@@ -79,11 +79,6 @@ export class MediaTypeMenu extends Component {
                     <RadioButtons ifChecked={selectedText} typesChange={this.handleTextChange} categoryName="texts" lists={texts} titleMedia="Text Types: "/>
                     <RadioButtons ifChecked={selectedSound} typesChange={this.handleSoundChange} categoryName="sounds" lists={sounds} titleMedia="Sound Types: "/>
                 </form>
-{/*                <div>
-                <TextMedia/>
-                </div>*/}
-
-
             </div>
         );
     }

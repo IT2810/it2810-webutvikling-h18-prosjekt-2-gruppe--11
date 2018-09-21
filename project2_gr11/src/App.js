@@ -14,7 +14,7 @@ class App extends Component {
     render() {
         return (
              <div id="content">
-                 <div className="title"><h1> Mediautstilling </h1></div>
+                 <div className="title"><h1> KATTegorier </h1></div>
 
                  <div className="layout"><Layout/></div>
 

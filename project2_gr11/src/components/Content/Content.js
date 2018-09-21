@@ -8,7 +8,7 @@ export class Content extends Component {
     render(){
         return (
             <div>
-                <div className="imageContainer"><ImageMedia sim={'spottedCats'}/></div>
+                <div className="imageContainer"><ImageMedia/></div>
                 <div className="textContainer"><TextMedia/></div>
             </div>
         );
