@@ -8,19 +8,21 @@ import React, { Component } from 'react';
 import { MediaTypeMenu } from "./components/MediaTypeMenu/MediaTypeMenu";
 import {Layout} from './components/Layout/Layout';
 
+import "./Style.css";
+
 class App extends Component {
     render() {
         return (
-             <div style={{height: '100%'}}>
-                 <div style={{padding: '15px', textAlign: 'center'}}><h1> Mediautstilling </h1></div>
-                 <div><Layout/></div>
+             <div id="content" style={{height: '100%'}}>
+                 <div className="title" style={{padding: '15px', textAlign: 'center'}}><h1> Mediautstilling </h1></div>
+                 <div className="layout"><Layout/></div>
 
                  {/*RADIOBUTTONS*/}
-                <div id="mediaTypeMenu" class="menu">
+                <div id="mediaTypeMenu" className="menu">
                     <MediaTypeMenu/>
                 </div>
 
-                <div class="audio">
+                <div className="audio">
                   {/*Random audio*/}
                     <audio controls>
                         <source src="soundMedia/surpriseSounds/1.mp3" type="audio/mpeg" />

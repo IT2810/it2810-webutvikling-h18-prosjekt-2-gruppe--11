@@ -55,7 +55,7 @@ export class Layout extends Component {
         ];
     return(
         <div>
-            <div>
+            <div className="tabs">
                 <Toolbar drawerClickHandler={this.drawerToggleClickHandler} click={this.handleTEST}/>
                 <SideDrawer show={this.state.sideDrawerOpen} click={this.handleTEST}/>
                 {backdrop}

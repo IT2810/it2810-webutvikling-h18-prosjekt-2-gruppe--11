@@ -25,8 +25,8 @@
         max-width: 100%;
         margin: 0 auto;
         grid-template-areas:
-                "tabs tabs tabs tabs"
-                "contents contents contents menu"
+                "title title title title"
+                "layout layout layout menu"
                 "audio audio audio menu";
     }
 }
@@ -49,10 +49,19 @@
     padding-bottom: 100%;
 }
 */
+
+.layout{
+    grid-area: layout;
+}
+
+.title{
+    grid-area: title;
+}
+
 .tabs{
     grid-area: tabs;
 }
-.contents{
+#randomElement {
     grid-area: contents;
 }
 .menu{
