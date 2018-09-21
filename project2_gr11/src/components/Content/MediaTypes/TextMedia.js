@@ -9,11 +9,6 @@ function textFormatter(t) {
     return el;
 }
 
-function randomNumber() {
-    let number = Math.floor((Math.random() * 4) + 1);
-    return number;
-}
-
 export class TextMedia extends Component {
     constructor(props) {
         super(props);
@@ -21,31 +16,59 @@ export class TextMedia extends Component {
             error: null,
             isLoaded: false,
             texts: [],
-            selectedTextMedia: ''
+            textPath: '',
+            savedText: {}
         };
         this.renderTextContent = this.renderTextContent.bind(this);
+        this.getText = this.getText.bind(this);
     }
-        componentDidMount() {
-            let textNr = randomNumber();
-            let chosenText = 'poems';
 
-            //AJAX call for text and image media
-            fetch('textMedia/'+ chosenText + '/'+ textNr +'.json')
-            .then( response => response.json())
-            .then(
-                (result)  => {
-                    this.setState({
-                        isLoaded: true,
-                        texts: result
-                    });
-                },
-                (error) => {
-                    this.setState({
-                        isLoaded: true,
-                        error
-                    });
-                })
+    getText() {
+        let chosenURL = this.props.textURL;
+        const { savedText, textPath } = this.state;
+        //if the chosen URL is not equal to the textPath
+        if( !(chosenURL === textPath) ){
+            //Check if the chosenURL already is fetched in savedTexts
+            if(chosenURL in savedText) {
+                this.setState({
+                    textPath: chosenURL,
+                    savedText: savedText[chosenURL]
+                });
+            } else {
+                //if not fetched yet
+                fetch(chosenURL)
+                    .then(response => response.json())
+                    .then(
+                        (result) => {
+                            this.setState({
+                                isLoaded: true,
+                                texts: result,
+                                textPath: chosenURL,
+                                savedText: this.state.savedText[chosenURL] = result
+                            });
+                        },
+                        (error) => {
+                            this.setState({
+                                isLoaded: true,
+                                error
+                            });
+                        }
+                    )
             }
+        }
+    }
+
+    componentDidMount() {
+        this.getText();
+    }
+
+    componentDidUpdate() {
+        const chosenURL = this.props.textURL;
+        const { textPath } = this.state;
+        if( !(chosenURL === textPath) ) {
+            this.getText();
+        }
+    }
 
 
         renderTextContent() {
@@ -56,7 +79,7 @@ export class TextMedia extends Component {
                 return <div>Loading...</div>;
             } else {
 
-                //TODO: index chooses text
+                //TODO: function for checking what radio button is clicked to handle text
                 return (
                     <div className="textfield">
                         <h2>{texts.title}</h2>

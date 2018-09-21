@@ -2,6 +2,7 @@
 Builder
  */
 
+
 import React, { Component } from 'react';
 import { RadioButtons } from "../RadioButtons/RadioButtons";
 import {ImageMedia} from "../Content/MediaTypes/ImageMedia";
@@ -31,7 +32,7 @@ export class MediaTypeMenu extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            selectedCat: 'spottedCats',
+            selectedCat: '',
             selectedText: '',
             selectedSound: ''
         };

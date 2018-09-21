@@ -6,6 +6,7 @@ import SideDrawer from "../Navigation/SideDrawer/SideDrawer";
 import Backdrop from "../Navigation/Backdrop/Backdrop";
 import { ImageMedia } from "../Content/MediaTypes/ImageMedia";
 import {MediaTypeMenu} from "../MediaTypeMenu/MediaTypeMenu";
+import {TextMedia} from "../Content/MediaTypes/TextMedia";
 
 function randomNumber() {
     let number = Math.floor((Math.random() * 4) + 1);
@@ -19,10 +20,10 @@ export class Layout extends Component {
         super(props);
         this.state = {
             sideDrawerOpen: false,
-            currentState: 0,
-            currentTab1: <ImageMedia key={'dattradi'} catURL='spottedCats'/>
+            currentState: 0
         };
-        this.handleTEST = this.handleTEST.bind(this);
+        this.handleTabChange = this.handleTabChange.bind(this);
+
     }
 
     // Menu-stuff
@@ -37,7 +38,7 @@ export class Layout extends Component {
     };
 
     //TEST
-    handleTEST(event) {
+    handleTabChange(event) {
         event.preventDefault();
         const str = event.target.id;
         const num =  parseInt(str.slice(3), 10);
@@ -54,38 +55,54 @@ export class Layout extends Component {
             backdrop = <Backdrop click={this.backDropClickHandler}/>;
         }
 
-        //TEST TODO
+        //Cat urls test for tabs
         let t = [
-            'imageMedia/spottedCats/' + n[0] + '.svg',
-            'imageMedia/plainCats/' + n[1] + '.svg',
+            'imageMedia/plainCats/' + n[0] + '.svg',
+            'imageMedia/spottedCats/' + n[1] + '.svg',
             'imageMedia/stripedCats/' + n[2] + '.svg',
             'imageMedia/plainCats/' + n[3] + '.svg'
-        ]
+        ];
 
         //tabs with pictures
-        let tabs = [
+        let catTabs = [
             <ImageMedia key={'1'} catURL={t[0]}/>,
             <ImageMedia key={'2'} catURL={t[1]}/>,
             <ImageMedia key={'3'} catURL={t[2]}/>,
             <ImageMedia key={'4'} catURL={t[3]}/>,
         ];
 
+        let t2 = [
+            'textMedia/poems/' + n[0] + '.json',
+            'textMedia/poems/' + n[1] + '.json',
+            'textMedia/poems/' + n[2] + '.json',
+            'textMedia/poems/' + n[3] + '.json'
+        ];
+
+        //tabs with pictures
+        let textTabs = [
+            <TextMedia key={'1'} textURL={t2[0]}/>,
+            <TextMedia key={'2'} textURL={t2[1]}/>,
+            <TextMedia key={'3'} textURL={t2[2]}/>,
+            <TextMedia key={'4'} textURL={t2[3]}/>,
+        ];
+
         return(
             <div id="content">
                 <div className="title"><h1> Mediautstilling </h1></div>
                 <div className="tabs">
-                    <Toolbar drawerClickHandler={this.drawerToggleClickHandler} click={this.handleTEST}/>
-                    <SideDrawer show={this.state.sideDrawerOpen} click={this.handleTEST}/>
+                    <Toolbar drawerClickHandler={this.drawerToggleClickHandler} click={this.handleTabChange}/>
+                    <SideDrawer show={this.state.sideDrawerOpen} click={this.handleTabChange}/>
                     {backdrop}
                 </div>
+
                 <main className={classes.Content} id="randomElement">
                     {/* Render imageMedia with the tabs key */}
-                    {/*tabs[this.state.currentState]*/}
-
-                    <ImageMedia key={'5'} catURL={'imageMedia/'+ this.props.cattegory +'/1.svg'}/>
+                    {catTabs[this.state.currentState]}
                 </main>
+
                 <div className="text">
-                    <Content/>
+                    {/*<Content/>*/}
+                    {textTabs[this.state.currentState]}
                 </div>
 
                 {/*Radio buttons*/}
