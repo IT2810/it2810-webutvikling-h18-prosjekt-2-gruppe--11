@@ -73,28 +73,26 @@ export class MediaTypeMenu extends Component {
         event.preventDefault();
     }
 
-    testCat(event) {
+  /*  testCat(event) {
         event.preventDefault();
         this.setState(state =>({
             isToggleOn: !state.isToggleOn
 
         }));
         console.log(this.state.isToggleOn);
-    }
+    }*/
 
     render() {
         const { selectedCat, selectedText, selectedSound } = this.state;
         return (
             <div>
-                <form onSubmit={this.testCat}>
+                <form onSubmit={this.handleSubmit}>
                     <RadioButtons ifChecked={selectedCat} typesChange={this.handleCatChange} categoryName="cats" lists={cats} titleMedia="Cat Types: "/>
                     <RadioButtons ifChecked={selectedText} typesChange={this.handleTextChange} categoryName="texts" lists={texts} titleMedia="Text Types: "/>
                     <RadioButtons ifChecked={selectedSound} typesChange={this.handleSoundChange} categoryName="sounds" lists={sounds} titleMedia="Sound Types: "/>
                     <input type="submit" value="Generate" />
-                    {/*console.log(selectedCat + 'mordiemann')*/}
                 </form>
 
-                {/*<div>{selectedCat}</div>*/}
                 <TextMedia/>
             </div>
         );
