@@ -27,17 +27,20 @@
         grid-template-areas:
                 "tabs tabs tabs tabs"
                 "contents contents contents menu"
-                "contents contents contents audio";
+                "audio audio audio menu";
     }
 }
 #content > *{
     background: #3bbced;
     padding: 30px;
+    /*
     position: relative;
-    display: grid;            /* new */
-    align-items: center;      /* new */
-    justify-items: center;    /* new */
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    */
 }
+/*
 .imageContainer{
     position: relative;
     height: 0;
@@ -45,6 +48,7 @@
     padding: 0;
     padding-bottom: 100%;
 }
+*/
 .tabs{
     grid-area: tabs;
 }
