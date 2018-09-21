@@ -4,15 +4,22 @@ import classes from './Layout.css';
 import {Content} from "../Content/Content";
 import SideDrawer from "../Navigation/SideDrawer/SideDrawer";
 import Backdrop from "../Navigation/Backdrop/Backdrop";
-import {ImageMedia} from "../Content/MediaTypes/ImageMedia";
+import { ImageMedia } from "../Content/MediaTypes/ImageMedia";
+
+function randomNumber() {
+    let number = Math.floor((Math.random() * 4) + 1);
+    return number;
+}
+
+let n = [randomNumber(), randomNumber(), randomNumber(), randomNumber()];
 
 export class Layout extends Component {
     constructor(props) {
         super(props);
         this.state = {
             sideDrawerOpen: false,
-            currentState: null,
-           // currentTab1: <ImageMedia key={'dattradi'} sim='plainCats'/>
+            currentState: 0,
+            currentTab1: <ImageMedia key={'dattradi'} catURL='spottedCats'/>
         };
         this.handleTEST = this.handleTEST.bind(this);
     }
@@ -46,13 +53,22 @@ export class Layout extends Component {
             backdrop = <Backdrop click={this.backDropClickHandler}/>;
         }
 
-        // ferdig oppsett av verdier og sim til imageMedia
+        //TEST TODO
+        let t = [
+            'imageMedia/spottedCats/' + n[0] + '.svg',
+            'imageMedia/plainCats/' + n[1] + '.svg',
+            'imageMedia/stripedCats/' + n[2] + '.svg',
+            'imageMedia/plainCats/' + n[3] + '.svg'
+        ]
+
+        //tabs with pictures
         let tabs = [
-            <ImageMedia key={'1'} sim='spottedCats'/>,
-            <ImageMedia key={'2'} sim='plainCats'/>,
-            <ImageMedia key={'3'} sim='stripedCats'/>,
-            <ImageMedia key={'4'} sim='plainCats'/>,
+            <ImageMedia key={'1'} catURL={t[0]}/>,
+            <ImageMedia key={'2'} catURL={t[1]}/>,
+            <ImageMedia key={'3'} catURL={t[2]}/>,
+            <ImageMedia key={'4'} catURL={t[3]}/>,
         ];
+
     return(
         <div>
             <div className="tabs">
