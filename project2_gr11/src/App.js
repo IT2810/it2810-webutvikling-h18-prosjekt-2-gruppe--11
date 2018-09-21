@@ -18,11 +18,11 @@ class App extends Component {
                  <div><Layout/></div>
 
                  {/*RADIOBUTTONS*/}
-                <div id="mediaTypeMenu">
+                <div id="mediaTypeMenu" class="menu">
                     <MediaTypeMenu/>
                 </div>
 
-                <div>
+                <div class="audio">
                   {/*Random audio*/}
                     <audio controls>
                         <source src="soundMedia/surpriseSounds/1.mp3" type="audio/mpeg" />
