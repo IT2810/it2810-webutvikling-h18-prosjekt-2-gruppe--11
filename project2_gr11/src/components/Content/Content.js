@@ -52,6 +52,15 @@ export class Content extends Component {
                 ))
     }
 
+/*    componentDidUpdate(prevProps, prevState) {
+        // only update chart if the data has changed
+        if (prevProps.data !== this.props.data) {
+            this.images = prevState.images({
+                images: this.props.data
+            });
+        }
+    }*/
+
     renderTextContent() {
         const { error, isLoaded, texts } = this.state;
         if (error) {
