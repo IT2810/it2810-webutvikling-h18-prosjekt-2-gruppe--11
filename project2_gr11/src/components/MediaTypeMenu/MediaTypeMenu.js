@@ -73,17 +73,12 @@ export class MediaTypeMenu extends Component {
     render() {
         const { selectedCat, selectedText, selectedSound } = this.state;
         return (
-            <div>
+            <div id="mediaTypeMenu" className="menu">
                 <form>
                     <RadioButtons ifChecked={selectedCat} typesChange={this.handleCatChange} categoryName="cats" lists={cats} titleMedia="Cat Types: "/>
                     <RadioButtons ifChecked={selectedText} typesChange={this.handleTextChange} categoryName="texts" lists={texts} titleMedia="Text Types: "/>
                     <RadioButtons ifChecked={selectedSound} typesChange={this.handleSoundChange} categoryName="sounds" lists={sounds} titleMedia="Sound Types: "/>
                 </form>
-{/*                <div>
-                <TextMedia/>
-                </div>*/}
-
-
             </div>
         );
     }

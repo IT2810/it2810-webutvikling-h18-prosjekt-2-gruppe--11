@@ -41,7 +41,7 @@
 }
 
 /* Hides the toggle button from PC*/
-@media (min-width: 769px) {
+@media (min-width: 760px) {
     .side-drawer {
         display: none;
     }

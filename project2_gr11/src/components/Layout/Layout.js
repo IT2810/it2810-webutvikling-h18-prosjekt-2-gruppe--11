@@ -5,6 +5,7 @@ import {Content} from "../Content/Content";
 import SideDrawer from "../Navigation/SideDrawer/SideDrawer";
 import Backdrop from "../Navigation/Backdrop/Backdrop";
 import { ImageMedia } from "../Content/MediaTypes/ImageMedia";
+import {MediaTypeMenu} from "../MediaTypeMenu/MediaTypeMenu";
 
 function randomNumber() {
     let number = Math.floor((Math.random() * 4) + 1);
@@ -69,21 +70,36 @@ export class Layout extends Component {
             <ImageMedia key={'4'} catURL={t[3]}/>,
         ];
 
-    return(
-        <div>
-            <div className="tabs">
-                <Toolbar drawerClickHandler={this.drawerToggleClickHandler} click={this.handleTEST}/>
-                <SideDrawer show={this.state.sideDrawerOpen} click={this.handleTEST}/>
-                {backdrop}
+        return(
+            <div id="content">
+                <div className="title"><h1> Mediautstilling </h1></div>
+                <div className="tabs">
+                    <Toolbar drawerClickHandler={this.drawerToggleClickHandler} click={this.handleTEST}/>
+                    <SideDrawer show={this.state.sideDrawerOpen} click={this.handleTEST}/>
+                    {backdrop}
+                </div>
+                <main className={classes.Content} id="randomElement">
+                    {/* Render imageMedia with the tabs key */}
+                    {/*tabs[this.state.currentState]*/}
+
+                    <ImageMedia key={'5'} catURL={'imageMedia/'+ this.props.cattegory +'/1.svg'}/>
+                </main>
+                <div className="text">
+                    <Content/>
+                </div>
+
+                {/*Radio buttons*/}
+                <MediaTypeMenu/>
+
+                <div className="audio">
+                    {/*Random audio*/}
+                    <audio controls>
+                        <source src="soundMedia/surpriseSounds/1.mp3" type="audio/mpeg" />
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+
             </div>
-            <main className={classes.Content} id="randomElement">
-                {/* Render imageMedia with the tabs key */}
-                {tabs[this.state.currentState]}
-            </main>
-            <div>
-                <Content/>
-            </div>
-        </div>
-    );
+        );
     }
 }

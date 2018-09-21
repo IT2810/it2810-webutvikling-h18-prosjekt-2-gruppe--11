@@ -13,23 +13,8 @@ import "./Style.css";
 class App extends Component {
     render() {
         return (
-             <div id="content">
-                 <div className="title"><h1> Mediautstilling </h1></div>
-
-                 <div className="layout"><Layout/></div>
-
-                 {/*RADIOBUTTONS*/}
-                <div id="mediaTypeMenu" className="menu">
-                    <MediaTypeMenu/>
-                </div>
-
-                <div className="audio">
-                  {/*Random audio*/}
-                    <audio controls>
-                        <source src="soundMedia/surpriseSounds/1.mp3" type="audio/mpeg" />
-                        Your browser does not support the audio element.
-                    </audio>
-                </div>
+             <div>
+                 <Layout cattegory="plainCats"/>
             </div>
         )
     }
