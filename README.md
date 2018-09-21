@@ -79,7 +79,13 @@ Vi startet arbeidet med å dele hovedoppgaven inn i flere mindre oppgaver, som v
 
 
 ## Testing av GUI
-(coming soon)
+Vi har testet brukergrensesnittet og det responsive designet på tre forskjellige enheter.
+
+Det responsive designet ble testet på laptoper med normal oppløsning, der vi skalerte nettleservinduet til ulike størrelser for å sjekke hvordan formateringen reagerer på dette. Oppførselen var slik som forventet i alle desktopnettleserene.
+
+Vi testet også nettsiden slik den vil fremstå på en mobil enhet ved å inspisere siden (Ctrl + shift + i), for så å enten velge ikonet øverst til venstre betegnet “Toggle device toolbar” eller trykke Ctrl + shift + m. Dette gjør at siden vises slik den ville vært på en mobil eller på et nettbrett. Også her var oppførselen som forventet på alle enhetene. 
+
+Vi har også hatt en enkel intern akseptansetest for å verifisere at brukergrensesnittet er brukervennlig. Her har vi hovedsakelig fokusert på hvordan nettsiden oppnår kravene stilt i oppgaven (det skal se bra ut og interaksjonen skal fungere både på mobil, pad og pc med skjerm av forskjellig størrelse), da vi har vært nødt til å fokusere mest på funksjonalitet heller enn visuell appell i dette prosjektet. Vi har her testet at tekst er lesbar i begge nettleserformater, tab-baren endres til hamburgermeny på liten skjerm, side-meny med tabs virker ryddig, og trykking på tab-knapper bytter bilde samtidig som det beholder hvilket bilde som fantes i forrige fane (i skrivende stund gjelder dette kun for bildene).
 
 ## Credits
 Alle bilder er laget av [Terdpongvector](https://www.freepik.com/terdpongvector).
