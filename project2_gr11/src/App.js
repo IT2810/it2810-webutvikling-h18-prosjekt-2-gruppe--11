@@ -13,8 +13,9 @@ import "./Style.css";
 class App extends Component {
     render() {
         return (
-             <div id="content" style={{height: '100%'}}>
-                 <div className="title" style={{padding: '15px', textAlign: 'center'}}><h1> Mediautstilling </h1></div>
+             <div id="content">
+                 <div className="title"><h1> Mediautstilling </h1></div>
+
                  <div className="layout"><Layout/></div>
 
                  {/*RADIOBUTTONS*/}
