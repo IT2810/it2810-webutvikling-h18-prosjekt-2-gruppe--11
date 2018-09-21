@@ -88,7 +88,7 @@ export class Layout extends Component {
 
         return(
             <div id="content">
-                <div className="title"><h1> Mediautstilling </h1></div>
+                <div className="title"><h1> KATTegorier </h1></div>
                 <div className="tabs">
                     <Toolbar drawerClickHandler={this.drawerToggleClickHandler} click={this.handleTabChange}/>
                     <SideDrawer show={this.state.sideDrawerOpen} click={this.handleTabChange}/>

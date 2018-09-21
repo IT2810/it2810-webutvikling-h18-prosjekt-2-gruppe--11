@@ -2,7 +2,6 @@
 import React, { Component } from 'react';
 import {ImageMedia} from "./MediaTypes/ImageMedia";
 import {TextMedia} from "./MediaTypes/TextMedia";
-import {SoundMedia} from "./MediaTypes/SoundMedia";
 
 export class Content extends Component {
     render(){
