@@ -5,9 +5,7 @@
 // Libraries
 import React, { Component } from 'react';
 
-// Comment
 import { MediaTypeMenu } from "./components/MediaTypeMenu/MediaTypeMenu";
-
 import {Layout} from './components/Layout/Layout';
 
 import "./Style.css";

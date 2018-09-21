@@ -37,6 +37,20 @@ export class ImageMedia extends Component {
             )
     }
 
+    // Ensure that is only updates when nextprops show
+    componentDidUpdate(nextProps, nextState) {
+        if (nextProps.data !== this.props.data) {
+            this.images = nextState.images({
+                images: this.props.data
+            });
+        }
+    }
+
+    // ^comfirms if that works
+    componentWillUpdate() {
+        console.log('[Image will update]');
+    }
+
     render() {
         return (
             <div dangerouslySetInnerHTML={{__html: this.state.imageSVG}} />

@@ -4,15 +4,15 @@ import classes from './Layout.css';
 import {Content} from "../Content/Content";
 import SideDrawer from "../Navigation/SideDrawer/SideDrawer";
 import Backdrop from "../Navigation/Backdrop/Backdrop";
-import {ImageMedia} from "../MediaTypes/ImageMedia";
+import {ImageMedia} from "../Content/MediaTypes/ImageMedia";
 
 export class Layout extends Component {
     constructor(props) {
         super(props);
         this.state = {
             sideDrawerOpen: false,
-            currentState: 0,
-            currentTab1: <ImageMedia key={'dattradi'} sim='spottedCats'/>
+            currentState: null,
+           // currentTab1: <ImageMedia key={'dattradi'} sim='plainCats'/>
         };
         this.handleTEST = this.handleTEST.bind(this);
     }
@@ -46,7 +46,7 @@ export class Layout extends Component {
             backdrop = <Backdrop click={this.backDropClickHandler}/>;
         }
 
-        //TEST
+        // ferdig oppsett av verdier og sim til imageMedia
         let tabs = [
             <ImageMedia key={'1'} sim='spottedCats'/>,
             <ImageMedia key={'2'} sim='plainCats'/>,
@@ -61,6 +61,7 @@ export class Layout extends Component {
                 {backdrop}
             </div>
             <main className={classes.Content} id="randomElement">
+                {/* Render imageMedia with the tabs key */}
                 {tabs[this.state.currentState]}
             </main>
         </div>
