@@ -52,11 +52,11 @@ export class ImageMedia extends Component {
 
     componentDidUpdate() {
         const chosenURL = this.props.catURL;
-        const {imagePath} = this.state;
-        if (!(chosenURL === imagePath)) {
+        const { imagePath } = this.state;
+        if( !(chosenURL === imagePath) ) {
             this.getImage();
         }
-    }
+                }
 
     render() {
 

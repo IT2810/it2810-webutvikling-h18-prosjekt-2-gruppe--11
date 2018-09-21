@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import {ImageMedia} from "./MediaTypes/ImageMedia";
 import {TextMedia} from "./MediaTypes/TextMedia";
-import {MediaTypeMenu} from "../MediaTypeMenu/MediaTypeMenu";
+import {SoundMedia} from "./MediaTypes/SoundMedia";
 
 export class Content extends Component {
     render(){
@@ -10,6 +10,7 @@ export class Content extends Component {
             <div>
                 <div className="imageContainer"><ImageMedia/></div>
                 <div className="textContainer"><TextMedia/></div>
+               {/* <div className="SoundMedia"><SoundMedia/></div>*/}
             </div>
         );
     }
